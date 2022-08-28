@@ -1,7 +1,8 @@
-use std::net::SocketAddr;
+mod app_config;
 
 use axum::{body::Body, response::Json, routing::get, Router};
 use serde_json::{json, Value};
+use std::net::SocketAddr;
 
 #[tokio::main]
 async fn main() {
@@ -21,10 +22,10 @@ async fn main() {
         .serve(app.into_make_service())
         .await
         .unwrap();
+}
 
-    async fn root() -> Json<Value> {
-        Json(json!({
-            "message": "Hello world!"
-        }))
-    }
+async fn root() -> Json<Value> {
+    Json(json!({
+        "message": "Hello world!!!"
+    }))
 }
