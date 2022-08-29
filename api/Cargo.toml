@@ -15,6 +15,9 @@ serde = "1.0.97"
 
 config = "0.13.2"
 
+sqlx = { version = "0.6", features = [ "runtime-tokio-native-tls" , "sqlite" ] }
+anyhow = "1.0.62"
+
 [[bin]]
 name = "test"
 path = "src/bin/test.rs"

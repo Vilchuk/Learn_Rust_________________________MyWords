@@ -1,3 +1,2 @@
-pub fn hi_func() {
-    println!("hi from db module")
-}
+pub mod models;
+pub mod sqlite_client;

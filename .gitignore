@@ -1,1 +1,4 @@
 **/.vscode/*
+api/*.db
+api/*.db-shm
+api/*.db-wal
