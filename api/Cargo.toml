@@ -18,6 +18,7 @@ config = "0.13.2"
 sqlx = { version = "0.6", features = [ "runtime-tokio-native-tls" , "sqlite", "chrono"] }
 chrono = { version = "0.4.22", features = [ "serde" ] }
 anyhow = "1.0.62"
+tracing = "0.1.36"
 
 [[bin]]
 name = "test"

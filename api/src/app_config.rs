@@ -2,12 +2,12 @@ use config::{Config, ConfigError, File};
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize, Clone)]
-#[allow(unused)]
 pub struct AppConfig {
     pub db_connection_string: String,
 }
 
 impl AppConfig {
+    #[allow(dead_code)]
     pub fn get() -> Result<Self, ConfigError> {
         let env = std::env::var("RUN_ENV").unwrap_or_else(|_| "dev".into());
         let s = Config::builder()
