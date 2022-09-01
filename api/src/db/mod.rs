@@ -1,2 +1,4 @@
+mod common;
+
 pub mod models;
-pub mod sqlite_client;
+pub mod users;

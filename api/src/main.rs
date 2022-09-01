@@ -4,6 +4,8 @@ use axum::{body::Body, response::Json, routing::get, Router};
 use serde_json::{json, Value};
 use std::net::SocketAddr;
 
+use api::db;
+
 #[tokio::main]
 async fn main() {
     // build our application with a single route
@@ -25,7 +27,6 @@ async fn main() {
 }
 
 async fn root() -> Json<Value> {
-    Json(json!({
-        "message": "Hello world!!!"
-    }))
+    let users = db::users::get_users().await.unwrap();
+    Json(json!({ "data": json!(users) }))
 }
